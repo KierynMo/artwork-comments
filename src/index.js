@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import './index.css';
+import {useState} from 'react';
 
 const comments = [
 {
@@ -29,6 +30,7 @@ const comments = [
 }
 ];
 
+
 //sorts the comments by how long ago they were posted
 function compare( a, b ) {
   if ( a.postedTime > b.postedTime ){
@@ -39,11 +41,12 @@ function compare( a, b ) {
   }
   return 0;
 }
-
 comments.sort( compare );
 
 
+
 function ArtworkComments() {
+  const [showDropdown, setShowDropdown] = useState(false);
   return (
     <section className="artwork-comments-component">
       <div className='header'>
@@ -53,23 +56,34 @@ function ArtworkComments() {
           <p>150%</p>
           <p className='left-border'>+</p>
         </div>
-        <p className='head-border'>🔔</p>
+        {/* to change color this button needs to know if every comment has been seen. Best solution I can come up with is:  */}
+        <p className='head-border' onClick={() => {setShowDropdown(!showDropdown)}}>🔔</p>
       </div>
-      <div className="comments-feed">
-        <section className="comment-section-outer">
-          {comments.map( (comment) => {
-            return <Comment key={comment.id} {...comment} />
-          })}
-        </section>
-      </div>
+      { showDropdown === true ? <CommentList /> : null }
     </section>
   );
 };
 
+function CommentList() {
+  return (
+    <div className="comments-feed">
+      <section className="comment-section-outer">
+        {comments.map( (comment) => {
+          return <Comment key={comment.id} {...comment} />
+        })}
+      </section>
+    </div>
+  )
+};
+//add this to css
+//make fixed height thats less than less than 3 comments
+//define overflow-y auto
+
 function Comment(props) {
   const {avatar, name, content, postedTime, seenBool} = props;
+  const [isSeen, setIsSeen] = useState(seenBool);
+
   const timeSincePostedMins = Math.floor((Date.now() - postedTime) / 60000)
-  console.log(timeSincePostedMins)
   return (
     <section className='comment-component'>
       <img src={avatar} alt="" className='avatar' />
@@ -79,7 +93,9 @@ function Comment(props) {
         <div className="comment-foot">
           <p>{timeSincePostedMins}mins ago</p>
           <p className='separator'> | </p>
-          <p>Mark as Seen</p>
+          {/* If you re-render the comment by clicking on/off the bell the 'mark as seen' state is not preserved.
+          This is because there is no functionality to change the comments seenBool */}
+          { isSeen === false ? <p onClick={() => {setIsSeen(true)}}>Mark as Seen</p> : null}
         </div>
       </div>
     </section>
