@@ -6,7 +6,7 @@ import {useState} from 'react';
 const comments = [
 {
   id: 1,
-  avatar: "https:\//egghead.io/_next/image?url=https%3A%2F%2Fd2eip9sf3oo6c2.cloudfront.net%2Finstructors%2Favatars%2F000%2F000%2F210%2Fsquare_64%2Fchris_new.png&w=48&q=75",
+  avatar: "https:\//img-premium.flaticon.com/png/512/4134/premium/4134163.png?token=exp=1629642894~hmac=fa7201ab9e830063dab5d24ab93b121a",
   name: 'Kieryn Moore',
   content: "Hi mate, I'm running to the shop for lunch, you need anything?",
   postedTime: new Date( Date.now() - 1000 * (60 * 5) ),
@@ -14,7 +14,7 @@ const comments = [
 },
 {
   id: 2,
-  avatar: "https:\//egghead.io/_next/image?url=https%3A%2F%2Fd2eip9sf3oo6c2.cloudfront.net%2Finstructors%2Favatars%2F000%2F000%2F210%2Fsquare_64%2Fchris_new.png&w=48&q=75",
+  avatar: "https:\//img-premium.flaticon.com/png/512/3006/premium/3006898.png?token=exp=1629642931~hmac=4c0aff7ee754644b14943b46b9c4116a",
   name: 'Ken Greef',
   content: "Thanks anyway, I have a meeting in 5.",
   postedTime: new Date( Date.now() - 1000 * (60 * 2) ),
@@ -22,7 +22,7 @@ const comments = [
 },
 {
   id: 3,
-  avatar: "https:\//egghead.io/_next/image?url=https%3A%2F%2Fd2eip9sf3oo6c2.cloudfront.net%2Finstructors%2Favatars%2F000%2F000%2F210%2Fsquare_64%2Fchris_new.png&w=48&q=75",
+  avatar: "https:\//img-premium.flaticon.com/png/512/4134/premium/4134114.png?token=exp=1629642785~hmac=0f6a14a27f4599617992bd4c66989873",
   name: 'Mat Roberts',
   content: "I'm okay thanks Kieryn, I have a tuna wrap!",
   postedTime: new Date( Date.now() - 1000 * (60 * 3) ),
@@ -47,6 +47,12 @@ comments.sort( compare );
 
 function ArtworkComments() {
   const [showDropdown, setShowDropdown] = useState(false);
+
+  // Checks how many unseen comments there is
+  let unseenComments = 0;
+  comments.map((comment) => {if(comment.seenBool === false) {unseenComments ++}});
+
+
   return (
     <section className="artwork-comments-component">
       <div className='header'>
@@ -56,8 +62,7 @@ function ArtworkComments() {
           <p>150%</p>
           <p className='left-border'>+</p>
         </div>
-        {/* to change color this button needs to know if every comment has been seen. Best solution I can come up with is:  */}
-        <p className='head-border' onClick={() => {setShowDropdown(!showDropdown)}}>🔔</p>
+        <p className={unseenComments > 0 ? 'head-border bell-btn bell-btn-blue' : 'head-border bell-btn'} onClick={() => {setShowDropdown(!showDropdown)}}>🔔</p>
       </div>
       { showDropdown === true ? <CommentList /> : null }
     </section>
@@ -88,14 +93,15 @@ function Comment(props) {
     <section className='comment-component'>
       <img src={avatar} alt="" className='avatar' />
       <div>
-        <p>{name}</p>
+        <p className="name">{name}</p>
         <p>{content}</p>
         <div className="comment-foot">
-          <p>{timeSincePostedMins}mins ago</p>
+          <p className="time-elapsed">{timeSincePostedMins}mins ago</p>
           <p className='separator'> | </p>
           {/* If you re-render the comment by clicking on/off the bell the 'mark as seen' state is not preserved.
           This is because there is no functionality to change the comments seenBool */}
-          { isSeen === false ? <p onClick={() => {setIsSeen(true)}}>Mark as Seen</p> : null}
+          { isSeen === false ? <p className='seen' onClick={() => {setIsSeen(true)}}>Mark as Seen</p> : null}
+          {/* {comments.forEach((comment, index) => {if(comment.name === name) {comments[index].seenBool = true}})}} */}
         </div>
       </div>
     </section>
@@ -103,4 +109,4 @@ function Comment(props) {
   )
 };
 
-ReactDom.render(<ArtworkComments />, document.getElementById('root'));
+ReactDom.render(<ArtworkComments {...comments} />, document.getElementById('root'));
