@@ -48,10 +48,10 @@ comments.sort( compare );
 function ArtworkComments() {
   const [showDropdown, setShowDropdown] = useState(false);
 
-  // Checks how many unseen comments there is
+  // Checks how many unseen comments there are
   let unseenComments = 0;
   comments.map((comment) => {if(comment.seenBool === false) {unseenComments ++}});
-
+  // Next logical step would be to remove the bell-btn-blue class from the dropdown button if all comments are read.
 
   return (
     <section className="artwork-comments-component">
@@ -79,9 +79,6 @@ function CommentList() {
     </div>
   )
 };
-//add this to css
-//make fixed height thats less than less than 3 comments
-//define overflow-y auto
 
 function Comment(props) {
   const {avatar, name, content, postedTime, seenBool} = props;
@@ -100,7 +97,6 @@ function Comment(props) {
           {/* If you re-render the comment by clicking on/off the bell the 'mark as seen' state is not preserved.
           This is because there is no functionality to change the comments seenBool */}
           { isSeen === false ? <p className='seen' onClick={() => {setIsSeen(true)}}>Mark as Seen</p> : null}
-          {/* {comments.forEach((comment, index) => {if(comment.name === name) {comments[index].seenBool = true}})}} */}
         </div>
       </div>
     </section>
