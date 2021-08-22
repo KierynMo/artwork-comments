@@ -26,19 +26,28 @@ body {
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid #e4e4e4;
+  height: 45px;
 }
 
 .head-border {
-  padding: 5px;
+  padding: 9px 5px 5px 5px;
   border-style: solid;
   border-width: 1px;
   border-color: #e4e4e4;
   border-radius: 5px;
+  margin: 4px;
 }
 
 .zoom-bar {
   display: flex;
-  justify-content: space-around;
+
+  width: 100px;
+  padding: 0px;
+}
+
+.zoom {
+  padding-left: 9px;
+  margin-top: 10px;
 }
 
 img {
@@ -56,13 +65,13 @@ img {
 
 .comments-feed {
   background-color: #f8f8f8;
-/*  height: 400px;
-  overflow: hidden;*/
+  height: 400px;
 }
 
 .comment-section-outer {
-/*  overflow-y: auto;*/
-  margin: 0px 5px;
+  overflow-y: scroll;
+  height: 400px;
+  margin: 0px 0px 0px 5px;
   border-style: solid;
   border-width: 1px;
   border-color: #e4e4e4;
@@ -73,6 +82,7 @@ img {
   background-color: white;
   display: flex;
   border-bottom: 1px dotted #e4e4e4;
+  padding-right: 10px;
 }
 
 .comment-foot {
@@ -91,6 +101,16 @@ img {
   padding: 0px 5px;
 }
 
+.bell-btn {
+  width: 35px;
+  text-align: center;
+}
+
 .bell-btn-blue {
   background-color: #69cae8;
+  padding-top: 4px;
+}
+
+.share-proof {
+  align: justify;
 }

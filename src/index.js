@@ -6,7 +6,7 @@ import {useState} from 'react';
 const comments = [
 {
   id: 1,
-  avatar: "https:\//img-premium.flaticon.com/png/512/4134/premium/4134163.png?token=exp=1629642894~hmac=fa7201ab9e830063dab5d24ab93b121a",
+  avatar: "https:\//www.terrainhopperusa.com/wp-content/uploads/2019/01/avatar-woman.png",
   name: 'Kieryn Moore',
   content: "Hi mate, I'm running to the shop for lunch, you need anything?",
   postedTime: new Date( Date.now() - 1000 * (60 * 5) ),
@@ -14,7 +14,7 @@ const comments = [
 },
 {
   id: 2,
-  avatar: "https:\//img-premium.flaticon.com/png/512/3006/premium/3006898.png?token=exp=1629642931~hmac=4c0aff7ee754644b14943b46b9c4116a",
+  avatar: "https:\//image.shutterstock.com/image-vector/young-man-avatar-character-260nw-661669825.jpg",
   name: 'Ken Greef',
   content: "Thanks anyway, I have a meeting in 5.",
   postedTime: new Date( Date.now() - 1000 * (60 * 2) ),
@@ -22,7 +22,7 @@ const comments = [
 },
 {
   id: 3,
-  avatar: "https:\//img-premium.flaticon.com/png/512/4134/premium/4134114.png?token=exp=1629642785~hmac=0f6a14a27f4599617992bd4c66989873",
+  avatar: "https:\//www.terrainhopperusa.com/wp-content/uploads/2019/01/avatar-man.png",
   name: 'Mat Roberts',
   content: "I'm okay thanks Kieryn, I have a tuna wrap!",
   postedTime: new Date( Date.now() - 1000 * (60 * 3) ),
@@ -56,11 +56,10 @@ function ArtworkComments() {
   return (
     <section className="artwork-comments-component">
       <div className='header'>
-        <p className='head-border'>📧 Share Proof</p>
+        <p className='head-border share-proof'>Share Proof</p>
         <div className="zoom-bar head-border">
-          <p className='right-border'>-</p>
-          <p>150%</p>
-          <p className='left-border'>+</p>
+          <p className="zoom"><strong>-   |  </strong>150%<strong>  |   +</strong ></p>
+
         </div>
         <p className={unseenComments > 0 ? 'head-border bell-btn bell-btn-blue' : 'head-border bell-btn'} onClick={() => {setShowDropdown(!showDropdown)}}>🔔</p>
       </div>
@@ -96,7 +95,7 @@ function Comment(props) {
         <p className="name">{name}</p>
         <p>{content}</p>
         <div className="comment-foot">
-          <p className="time-elapsed">{timeSincePostedMins}mins ago</p>
+          <p className="time-elapsed">{timeSincePostedMins} mins ago</p>
           <p className='separator'> | </p>
           {/* If you re-render the comment by clicking on/off the bell the 'mark as seen' state is not preserved.
           This is because there is no functionality to change the comments seenBool */}
