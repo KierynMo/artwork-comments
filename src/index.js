@@ -52,7 +52,7 @@ function ArtworkComments() {
   let unseenComments = 0;
   comments.map((comment) => {if(comment.seenBool === false) {unseenComments ++}});
   // Next logical step would be to remove the bell-btn-blue class from the dropdown button if all comments are read.
-  // I need to learn more about 'lifting state up'. This may be the answer to
+  // I need to learn more about 'lifting state up'.
 
   return (
     <section className="artwork-comments-component">
