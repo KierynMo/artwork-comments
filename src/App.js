@@ -1,16 +1,16 @@
 import React from 'react';
 import {useState} from 'react';
-import {comments} from './comments';
+import {comments} from './comment_data';
 import {CommentList} from './comment-list';
 
 function ArtworkComments() {
   const [showDropdown, setShowDropdown] = useState(false);
 
-  // Checks how many unseen comments there are
+  {/*Checks how many unseen comments there are*/}
   let unseenComments = 0;
-  comments.map((comment) => {if(comment.seenBool === false) {unseenComments ++}});
-  // Next logical step would be to remove the bell-btn-blue class from the dropdown button if all comments are read.
-  // I need to learn more about 'lifting state up'.
+  {/*comments.map((comment) => {if(comment.seenBool === false) {unseenComments ++}});
+  Next logical step would be to remove the bell-btn-blue class from the dropdown button if all comments are read.
+  I need to learn more about 'lifting state up'.*/}
 
   return (
     <section className="artwork-comments-component">

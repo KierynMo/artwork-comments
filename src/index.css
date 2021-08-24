@@ -1,10 +1,10 @@
 body {
   font-family: Helvetica;
-  color: #acaeb1;
+  color: #404041;
 }
 
 .name {
-  color: #69cae8;
+  color: #02b7e2;
 }
 
 .seen {
@@ -12,20 +12,20 @@ body {
 }
 
 .time-elapsed {
-  color:#d7d2d0;
+  color:#8c8c8e;
 }
 
 .artwork-comments-component {
   width: 300px;
   border-style: solid;
   border-width: 1px;
-  border-color: #e4e4e4;
+  border-color: #d8d9d9;
 }
 
 .header {
   display: flex;
   justify-content: space-around;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #d8d9d9;
   height: 45px;
 }
 
@@ -33,7 +33,7 @@ body {
   padding: 9px 5px 5px 5px;
   border-style: solid;
   border-width: 1px;
-  border-color: #e4e4e4;
+  border-color: #d8d9d9;
   border-radius: 5px;
   margin: 4px;
 }
@@ -55,11 +55,11 @@ img {
 }
 
 .right-border {
-  border-right: 1px solid #e4e4e4;
+  border-right: 1px solid #d8d9d9;
 }
 
 .left-border {
-    border-left: 1px solid #e4e4e4;
+    border-left: 1px solid #d8d9d9;
 
 }
 
@@ -74,14 +74,14 @@ img {
   margin: 0px 0px 0px 5px;
   border-style: solid;
   border-width: 1px;
-  border-color: #e4e4e4;
+  border-color: #d8d9d9;
   border-radius: 10px;
 }
 
 .comment-component {
   background-color: white;
   display: flex;
-  border-bottom: 1px dotted #e4e4e4;
+  border-bottom: 1px dotted #d8d9d9;
   padding-right: 10px;
 }
 
