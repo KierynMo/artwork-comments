@@ -1,9 +1,8 @@
 import React from 'react';
-import {useState} from 'react';
 import {Comment} from './comment';
 import {comments} from './comments';
 
-function CommentList() {
+export function CommentList() {
   comments.sort( compare );
   return (
     <div className="comments-feed">
@@ -27,4 +26,3 @@ function compare( a, b ) {
   return 0;
 };
 
-export {CommentList, compare}

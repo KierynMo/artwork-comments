@@ -1,6 +1,5 @@
 import React from 'react';
 import {useState} from 'react';
-import {comments} from './comments';
 
 export function Comment(props) {
   const {avatar, name, content, postedTime, seenBool} = props;
