@@ -1,17 +1,17 @@
 import React from 'react';
-import {useState} from 'react';
+
 
 
 export function Comment(props) {
   const {id, body, acknowledged, dates: {created: {date_time}}, user: {first_name, last_name, image: {square_url}}} = props;
-  const [isSeen, setIsSeen] = useState(acknowledged);
+  const [isSeen, setIsSeen] = React.useState(acknowledged);
 
   return (
     <section className='comment-component'>
       <img src={square_url} alt="" className='avatar' />
       <div>
         <p className="name">{first_name} {last_name}</p>
-        <p>{body}</p>
+        <p className="content-body">{body}</p>
         <div className="comment-foot">
           <p className="time-elapsed">{formatTimeAgo(date_time)}</p>
           <p className='separator'> | </p>
