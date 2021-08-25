@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica;
+  font-family: 'Raleway', sans-serif;
   color: #404041;
 }
 
@@ -9,6 +9,7 @@ body {
 
 .seen {
   color: #f5c56b;
+  cursor: pointer;
 }
 
 .time-elapsed {
@@ -26,7 +27,7 @@ body {
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid #d8d9d9;
-  height: 45px;
+  height: 40px;
 }
 
 .head-border {
@@ -59,13 +60,20 @@ body {
 .c1,.c2,.c3 {
   margin: 0px;
   text-align: center;
-  padding-top: 9px;
+  height: 30px;
 }
 .c1 {
   border-right: 1px solid #d8d9d9;
+  font-size: 23px;
 }
+
+.c2 {
+  padding-top: 5px;
+}
+
 .c3 {
   border-left: 1px solid #d8d9d9;
+  font-size: 24px;
 }
 
 img {
@@ -77,18 +85,18 @@ img {
 }
 
 .left-border {
-    border-left: 1px solid #d8d9d9;
+  border-left: 1px solid #d8d9d9;
 
 }
 
 .comments-feed {
   background-color: #f8f8f8;
-  height: 350px;
+  height: 300px;
 }
 
 .comment-section-outer {
   overflow-y: scroll;
-  height: 350px;
+  height: 300px;
   margin: 0px 0px 0px 5px;
   border-style: solid;
   border-width: 1px;
@@ -109,16 +117,18 @@ img {
 
 .margin-sml {
   margin-top: 7px;
+  font-size: 14px;
 }
 
 .content-body {
   margin: 0px;
+  font-size: 14px;
 }
 
 .comment-foot {
   display: flex;
   justify-content: flex-start;
-  margin: 0px;
+  margin: 0px 0px 4px 0px;
 }
 
 .avatar {
@@ -135,7 +145,8 @@ img {
 .bell-btn {
   width: 35px;
   text-align: center;
-  padding-top: 4px;
+  padding-top: 1px;
+  cursor: pointer;
 }
 
 .bell-btn:hover {
@@ -148,4 +159,5 @@ img {
 
 .share-proof {
   align: justify;
+  padding-top: 5px;
 }
