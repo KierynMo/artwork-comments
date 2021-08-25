@@ -105,11 +105,12 @@ img {
 .bell-btn {
   width: 35px;
   text-align: center;
+  padding-top: 4px;
 }
 
 .bell-btn-blue {
   background-color: #69cae8;
-  padding-top: 4px;
+
 }
 
 .share-proof {

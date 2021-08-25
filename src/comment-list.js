@@ -2,13 +2,14 @@ import React from 'react';
 import {Comment} from './comment';
 import {comments} from './comment_data';
 
-export function CommentList() {
-  comments.sort( compare );
+export function CommentList(props) {
+  const {commentsData, setCommentsData} = props;
+  commentsData.sort( compare );
   return (
     <div className="comments-feed">
       <section className="comment-section-outer">
-        {comments.map( (comment) => {
-          return <Comment key={comment.id} {...comment} />
+        {commentsData.map( (comment) => {
+          return <Comment key={comment.id} commentPosition={comment.id} commentsData={commentsData} setCommentsData={setCommentsData} {...comment} />
         })}
       </section>
     </div>
