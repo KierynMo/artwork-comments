@@ -40,7 +40,6 @@ body {
 
 .zoom-bar {
   display: flex;
-
   width: 100px;
   padding: 0px;
 }
@@ -48,6 +47,25 @@ body {
 .zoom {
   padding-left: 9px;
   margin-top: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 0px;
+
+}
+
+.c1,.c2,.c3 {
+  margin: 0px;
+  text-align: center;
+  padding-top: 9px;
+}
+.c1 {
+  border-right: 1px solid #d8d9d9;
+}
+.c3 {
+  border-left: 1px solid #d8d9d9;
 }
 
 img {
@@ -65,12 +83,12 @@ img {
 
 .comments-feed {
   background-color: #f8f8f8;
-  height: 400px;
+  height: 350px;
 }
 
 .comment-section-outer {
   overflow-y: scroll;
-  height: 400px;
+  height: 350px;
   margin: 0px 0px 0px 5px;
   border-style: solid;
   border-width: 1px;
@@ -83,6 +101,18 @@ img {
   display: flex;
   border-bottom: 1px dotted #d8d9d9;
   padding-right: 10px;
+}
+
+.name {
+  margin-bottom: 5px;
+}
+
+.margin-sml {
+  margin-top: 7px;
+}
+
+.content-body {
+  margin: 0px;
 }
 
 .comment-foot {
@@ -108,9 +138,12 @@ img {
   padding-top: 4px;
 }
 
+.bell-btn:hover {
+  background-color: #69cae8;
+}
+
 .bell-btn-blue {
   background-color: #69cae8;
-
 }
 
 .share-proof {
