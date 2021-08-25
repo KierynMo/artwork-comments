@@ -1,6 +1,5 @@
 import React from 'react';
 import {Comment} from './comment';
-import {comments} from './comment_data';
 
 export function CommentList(props) {
   const {commentsData, setCommentsData} = props;

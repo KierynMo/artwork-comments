@@ -14,9 +14,10 @@ function ArtworkComments() {
     <section className="artwork-comments-component">
       <div className='header'>
         <p className='head-border share-proof'>Share Proof</p>
-        <div className="zoom-bar head-border">
-          <p className="zoom"><strong>-   |  </strong>150%<strong>  |   +</strong ></p>
-
+        <div className="zoom-bar head-border grid">
+          <p className='c1'><strong>-</strong></p>
+          <p className='c2'>150%</p>
+          <p className='c3'><strong>+</strong></p>
         </div>
         <p className={unseenComments === false ? 'head-border bell-btn' : 'head-border bell-btn bell-btn-blue'} onClick={() => {setShowDropdown(!showDropdown)}}>🔔</p>
       </div>

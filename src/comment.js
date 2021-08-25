@@ -3,7 +3,7 @@ import React from 'react';
 export function Comment(props) {
   const {commentPosition, commentsData, setCommentsData} = props;
   let comment = commentsData.find(obj => obj.id === commentPosition);
-  const {id, body, acknowledged, dates: {created: {date_time}}, user: {first_name, last_name, image: {square_url}}} = comment;
+  const {body, acknowledged, dates: {created: {date_time}}, user: {first_name, last_name, image: {square_url}}} = comment;
 
   // {/* Function changes comment state from false to true */}
   const changeAcknowledged = (comment_id) => {
@@ -22,9 +22,9 @@ export function Comment(props) {
         <p className="name">{first_name} {last_name}</p>
         <p className="content-body">{body}</p>
         <div className="comment-foot">
-          <p className="time-elapsed">{formatTimeAgo(date_time)}</p>
-          <p className='separator'> | </p>
-          { acknowledged === false ? <p className='seen' onClick={() => {changeAcknowledged(commentPosition)}}>Mark as Seen</p> : null}
+          <p className="time-elapsed margin-sml">{formatTimeAgo(date_time)}</p>
+          <p className='separator margin-sml'> | </p>
+          { acknowledged === false ? <p className='seen margin-sml' onClick={() => {changeAcknowledged(commentPosition)}}>Mark as Seen</p> : null}
         </div>
       </div>
     </section>
